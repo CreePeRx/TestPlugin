@@ -1,0 +1,9 @@
+name: ImpBasic
+main: xyz.Creeper.ImpTab.ImpTab
+author: xjk_
+version: 1.0
+website: http://thatxjk.xyz
+
+commands:
+  impbasic:
+     description: Leirás!
