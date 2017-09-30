@@ -45,6 +45,7 @@ public class ImpTab extends JavaPlugin{
                 String changelogsor4 = getConfig().getString("changelogsor4");
                 String changelogsor5 = getConfig().getString("changelogsor5");
                 String changelogsor6 = getConfig().getString("changelogsor6");
+                String changelogsor7 = getConfig().getString("changelogsor7");
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', changelogprefix));
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', changelogsor1));
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', changelogsor2));
