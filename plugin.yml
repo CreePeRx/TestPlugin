@@ -7,3 +7,5 @@ website: http://thatxjk.xyz
 commands:
   impbasic:
      description: Leirás!
+  fly:
+     description: Leirás

@@ -4,9 +4,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ImpTab extends JavaPlugin{
+public class ImpTab extends JavaPlugin {
 
     public void onEnable () {
         getLogger().info("[ImpBasic] A plugin elindult");
@@ -23,6 +27,26 @@ public class ImpTab extends JavaPlugin{
 
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player p = (Player) sender;
+
+        if (command.getName().equalsIgnoreCase("fly")) {
+            if (args.length == 1) {
+                sender.sendMessage("Helyes használat: /fly [ON/OFF]");
+                return true;
+            }
+        }
+
+        if (args[1].equalsIgnoreCase("on")) {
+            p.setFlying(true);
+            sender.sendMessage("Mini-Esssentials --> A Fly BEKAPCSOLVA!");
+            return false;
+        }
+
+        if (args[1].equalsIgnoreCase("off")) {
+            p.setFlying(false);
+            sender.sendMessage("Mini-Essentials ->A fly offolva!");
+            return false;
+        }
         if (command.getName().equalsIgnoreCase("impbasic")) {
             if (args.length == 0) {
                 sender.sendMessage("§6[§bImplicite-Basic] parancsok!");
@@ -31,6 +55,11 @@ public class ImpTab extends JavaPlugin{
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase("ci")) {
+                p.getInventory().clear();
+                p.sendMessage("[Mini-Essentials!] Az inventoryd ki lett törölve!");
+                return false;
+            }
             if (args[0].equalsIgnoreCase("helpadmin")){
                 sender.sendMessage("§b[Implicite-Basic] Admin parancsok!");
                 sender.sendMessage("&c /impbasic reload - Reloadolja a plugint! ");
