@@ -28,22 +28,21 @@ public class ImpTab extends JavaPlugin {
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player) sender;
-
         if (command.getName().equalsIgnoreCase("fly")) {
-            if (args.length == 1) {
+            if (args.length == 0) {
                 sender.sendMessage("Helyes használat: /fly [ON/OFF]");
                 return true;
             }
         }
 
-        if (args[1].equalsIgnoreCase("on")) {
+        if (args[0].equalsIgnoreCase("on")) {
             p.setFlying(true);
             sender.sendMessage("Mini-Esssentials --> A Fly BEKAPCSOLVA!");
             return false;
         }
 
-        if (args[1].equalsIgnoreCase("off")) {
-            p.setFlying(false);
+        if (args[0].equalsIgnoreCase("off")) {
+            p.getAddress();
             sender.sendMessage("Mini-Essentials ->A fly offolva!");
             return false;
         }
